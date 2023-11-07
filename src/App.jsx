@@ -12,7 +12,8 @@ const router = createBrowserRouter(
         <Route path='/' element={<Dashboard />} />
         <Route path=':id' element={<BudgetDetails />} />
         <Route path='analytics' element={<Analytics />}/>
-        <Route path='*' element={<MissingErr />} />
+
+        <Route path='*' element={<MissingErr />}/>
     </Route>
   )
 )

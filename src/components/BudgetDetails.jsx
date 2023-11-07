@@ -6,12 +6,12 @@ import ExpenseEl from "./Expense"
 function BudgetDetails() {
   const { id } = useParams()
   const { BudgetData } = useContext(DataContext)
-
   
-  /* if (!BudgetData || !BudgetData[id]) {
+  
+  if (!BudgetData || !BudgetData[id]) {
     return <div>Loading...</div>; 
   }
- */
+
   const budgetItem = BudgetData[id];
 
   const calculateTotalExpenses = () => {
