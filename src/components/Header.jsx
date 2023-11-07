@@ -12,7 +12,7 @@ function Header() {
   
   
   return (
-    <div className='flex items-center justify-between p-2 border-2 shadow-sm gap-5'>
+    <div className='flex items-center justify-between p-2 border shadow-sm gap-5 mt-2 sticky top-0 bg-white'>
         {width < 700 && <BiMenu onClick={() => setShowNav(true)} size={30} className='cursor-pointer'/>}
        <form className='flex-grow'>
          <input type="text" placeholder='search...' className='text-black caret-black border p-1 rounded w-full'  autoFocus/>

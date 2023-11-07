@@ -17,7 +17,7 @@ function Layout() {
   return (
     <section className='flex'>
        {showNav && <SideNav />} 
-        <main className='flex-grow'>
+        <main className='flex-grow p-3'>
             <Header />
              <Outlet />
         </main>
