@@ -16,7 +16,7 @@ function useScreenWidth() {
     };
   }, []);
 
-  console.log(screenWidth);
+
 
   return screenWidth;
 }

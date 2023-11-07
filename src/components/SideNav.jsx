@@ -15,7 +15,7 @@ const Hide = () => {
 
   return (
     <aside className='w-full text-white shadow-lg fixed z-10 bg-black/20'>
-     <div className='w-[250px] h-full fixed bg-blue-950 flex flex-col gap-1 z-[1]'>
+     <div className='w-[250px] h-[97%] fixed bg-blue-950 flex flex-col gap-1 z-[1] shadow-xl rounded-2xl top-[50%] translate-y-[-50%] ml-1'>
          <div className='w-full p-2 flex justify-between items-center'>
            <BiDollar  className='border text-[1.5rem] rounded-full' size={30}/>
            {width < 700 && <BiX size={30} onClick={() => setShowNav(!showNav)} className='cursor-pointer'/>}
