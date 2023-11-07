@@ -17,7 +17,8 @@ function Layout() {
   return (
     <section className='flex'>
        {showNav && <SideNav />} 
-        <main className='flex-grow p-3'>
+       {showNav && (width < 700) &&  <div className='w-full h-screen bg-black/80 absolute z-[1] right-0' onClick={() => setShowNav(false)}></div>}
+        <main className='flex-grow p-3' style={{marginLeft: !(width < 700) && '250px'}}>
             <Header />
              <Outlet />
         </main>
