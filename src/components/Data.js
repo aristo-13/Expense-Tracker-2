@@ -2,11 +2,11 @@ export const Budgets = [
     {   
        id: 0,
        BudgetAmt: 700,
-       category: 'Food/Drinks',
+       category: 'Foods/Drinks',
        date: "02/08/2023",
        Expenses: [
         {
-            text: 'Food',
+            text: 'Foods',
             cost: 200,
             date: "02/08/2023",
             account: "credit",

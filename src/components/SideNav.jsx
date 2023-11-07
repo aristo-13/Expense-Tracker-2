@@ -24,10 +24,10 @@ const Hide = () => {
             <div>
                 <NavLink onClick={Hide} to='/' className='flex items-center gap-2 p-2 hover:bg-white/10 hover:text-white'><span><BiHome className='text-[1.32rem]'/></span> Dashboard</NavLink>
                 <NavLink onClick={Hide} to='analytics' className='flex items-center gap-2 p-2 hover:bg-white/10 hover:text-white'><span><BiAnalyse className='text-[1.32rem]'/></span> Analytics</NavLink>
-                <NavLink onClick={Hide} className='flex items-center gap-2 p-2 hover:bg-white/10 hover:text-white'><span><BiCheckCircle className='text-[1.32rem]'/></span> Plan Budget</NavLink>
+                <NavLink onClick={Hide} to='plan' className='flex items-center gap-2 p-2 hover:bg-white/10 hover:text-white'><span><BiCheckCircle className='text-[1.32rem]'/></span> Plan Budget</NavLink>
             </div>
             <div>
-               <NavLink onClick={Hide} className='flex items-center gap-2 p-2 hover:bg-white/10 hover:text-white mb-2'><span><BiCog className='text-[1.32rem]'/></span> Settings</NavLink>
+               <NavLink to='settings' onClick={Hide} className='flex items-center gap-2 p-2 hover:bg-white/10 hover:text-white mb-2'><span><BiCog className='text-[1.32rem]'/></span> Settings</NavLink>
             </div>
         </nav>
      </div>

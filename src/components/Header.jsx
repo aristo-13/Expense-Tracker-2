@@ -11,21 +11,27 @@ function Header() {
   const [filtered,setFiltered] = useState([])
   const width = UseScreenWidth()
 
+
 // Inside the `handleSearch` function
 const handleSearch = () => {
   setShowTree(true);
 
+  /* if (Search.trim() === '') {
+    setShowTree(false);
+  } else { */
     setFiltered(
       BudgetData.filter((Budget) =>
-        (Budget.category).toLowerCase().includes(Search.toLowerCase())))
-   
+        Budget.category.toLowerCase().includes(Search.toLowerCase())
+      )
+    );
+ /*  } */
 }
 
 
   
   
   return (
-    <div className='flex items-center justify-between p-3 border shadow-lg gap-5 mt-2 sticky top-0 bg-white rounded'>
+    <div className='flex items-center justify-between p-3 border shadow-lg gap-5 mt-2 sticky top-0 bg-white rounded z-[1]'>
         {width < 700 && <BiMenu onClick={() => setShowNav(true)} size={30} className='cursor-pointer'/>}
        <form className='flex-grow relative' onSubmit={(e) => e.preventDefault()}>
          <input 
@@ -35,12 +41,12 @@ const handleSearch = () => {
          autoFocus
          role="searchbox"
          onChange={(e) => {
-          handleSearch()
           setSearch(e.target.value)
+          handleSearch()
          }}
          />
-         <div className='absolute w-full'>
-            {showTree && 
+         {showTree && <div className='absolute w-full bg-white border'>
+            
               <div>
                 {filtered.map((filter) => (
                   <div key={filter.id} className="border p-2 m-1">
@@ -48,8 +54,8 @@ const handleSearch = () => {
                   </div>
                 ))}
               </div>
-            }
-        </div>
+            
+        </div>}
 
        </form>
        <div className='flex items-center gap-2'>
