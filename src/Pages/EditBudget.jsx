@@ -11,19 +11,15 @@ const [editedCategory,setEditedCategory] = useState('Transport')
 const [editedBudgetAmt,setEditedBudgetAmt] = useState('')
 const navigate = useNavigate()
 
-
-
-
 const filteredBudget = BudgetData.find((BudgetData) => (BudgetData.id).toString() === id)
-    console.log(filteredBudget)
-
-    useEffect(() => {
+    
+ useEffect(() => {
         if(filteredBudget) {
             setEditedBudgetAmt(filteredBudget.BudgetAmt)
             setEditedCategory(filteredBudget.category)
-            
         }
-    },[filteredBudget])
+ },[filteredBudget])
+   
 
 
  const handleEdit = (e) => {
@@ -33,7 +29,7 @@ const filteredBudget = BudgetData.find((BudgetData) => (BudgetData.id).toString(
     setBudgetData(
          BudgetData.map((budget) => budget.id === filteredBudget.id?  {
            id: id,
-           BudgetAmt: editedBudgetAmt,
+           BudgetAmt: Number(editedBudgetAmt),
            category: editedCategory,
            date: filteredBudget.date,
            Expenses: filteredBudget.Expenses
