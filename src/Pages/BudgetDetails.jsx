@@ -1,12 +1,14 @@
 import { useParams } from "react-router-dom";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { DataContext } from "../components/Context";
 import { FaMinus } from "react-icons/fa";
 import ExpenseEl from "../components/Expense";
+import AddExpense from "../components/AddExpense";
 
 function BudgetDetails() {
   const { id } = useParams();
   const { BudgetData } = useContext(DataContext);
+  const [newExpense,setNewExpense] = useState(false)
 
   if (!BudgetData || !BudgetData[id]) {
     return <div>Loading...</div>;
@@ -41,8 +43,9 @@ function BudgetDetails() {
           <ExpenseEl expense={expense} key={expense.id} budgetItem={budgetItem}/>
         ))}
       </div>
-
-      <FaMinus className="w-[50px] h-[40px] fixed bottom-10 right-[90px] bg-red-600 text-white cursor-pointer border rounded-full p-3 active:scale-[0.9]"/>
+      {newExpense && <div className='w-full h-screen bg-black/80 fixed z-[10] right-0 bottom-0' onClick={() => setNewExpense(false)}></div>}
+      {newExpense && <AddExpense setNewExpense={setNewExpense} budgetItem={budgetItem}/>}
+      <FaMinus className="w-[50px] h-[40px] fixed bottom-10 right-[90px] bg-red-600 text-white cursor-pointer border rounded-full p-3 active:scale-[0.9]" onClick={() => setNewExpense(true)}/>
     </div>
   )
 }

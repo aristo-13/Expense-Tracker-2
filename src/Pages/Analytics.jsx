@@ -14,8 +14,9 @@ function Analytics() {
 
   return (
     <div className="p-2">
-       <h1 className="text-[1.2rem] font-medium  text-blue-950 p-2">ALL BUDGETS</h1>
+       <h1 className="text-[1.2rem] font-bold  text-blue-950 p-2 border bg-black/10">ALL BUDGETS</h1>
        <div className="flex flex-col-reverse">
+         {!BudgetData.length > 0 && <p className="text-red-600 text-center text-lg font-medium">No Budgets To show!</p> }
           {
             BudgetData.map((budget) => (
               <AnalyticEl budget={budget} key={budget.id} handleDelete={handleDelete}/>

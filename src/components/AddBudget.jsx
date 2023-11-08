@@ -24,7 +24,7 @@ const AddNewBudget = (e) => {
     setBudgetData(
         [...BudgetData,newBudget]
     )
-    console.log(newBudget)
+    setNewBudgetAmt('')
     setToggleAddBudget(false)
     navigate('/analytics')
 }
@@ -38,19 +38,19 @@ const AddNewBudget = (e) => {
         <form onSubmit={AddNewBudget}>
             <input type="number" value={newBudgetAmt} onChange={(e)=> setNewBudgetAmt(e.target.value)} className="border w-full p-2" placeholder="Budget Amount"/>
             <label htmlFor="selectCat">select category</label>
-            <select className="w-full border p-2" name="selectCat" value={newCategory} onChange={(e)=> setNewCategory(e.target.value)}>
-                <option value="Foods/Drinks">Foods/Drinks</option>
-                <option value="Transport">Transport</option>
-                <option value="Vacation">Vacation</option>
-                <option value="Drinks">Drinks</option>
-                <option value="Maintenance">Maintenance</option>
-                <option value="Education">Education</option>
-                <option value="Entertainment">Entertainment</option>
-                <option value="Travel">Travel</option>
-                <option value="Shopping">Shopping</option>
-                <option value="Healthcare">Healthcare</option>
-                <option value="Hobbies">Hobbies</option>
-                <option value="Gifts">Gifts</option>
+            <select className="w-full border p-2 rounded" name="selectCat" value={newCategory} onChange={(e)=> setNewCategory(e.target.value)}>
+                <option className="w-[100px] bg-blue-950 text-white" value="Foods/Drinks">Foods/Drinks</option>
+                <option className="w-[100px] bg-blue-950 text-white" value="Transport">Transport</option>
+                <option className="w-[100px] bg-blue-950 text-white" value="Vacation">Vacation</option>
+                <option className="w-[100px] bg-blue-950 text-white" value="Drinks">Drinks</option>
+                <option className="w-[100px] bg-blue-950 text-white" value="Maintenance">Maintenance</option>
+                <option className="w-[100px] bg-blue-950 text-white" value="Education">Education</option>
+                <option className="w-[100px] bg-blue-950 text-white" value="Entertainment">Entertainment</option>
+                <option className="w-[100px] bg-blue-950 text-white" value="Travel">Travel</option>
+                <option className="w-[100px] bg-blue-950 text-white" value="Shopping">Shopping</option>
+                <option className="w-[100px] bg-blue-950 text-white" value="Healthcare">Healthcare</option>
+                <option className="w-[100px] bg-blue-950 text-white" value="Hobbies">Hobbies</option>
+                <option className="w-[100px] bg-blue-950 text-white" value="Gifts">Gifts</option>
             </select>
 
 
