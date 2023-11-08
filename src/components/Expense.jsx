@@ -36,7 +36,7 @@ function Expense( {expense,budgetItem}) {
        </div>
        <div className='flex flex-col'>
          <span className='text-[red] font-semibold'>{expense.cost.toLocaleString('en-US', { style: 'currency',currency: 'USD',})}</span>
-         <span className='text-gray-500 text-[10px]'>{expense.date}</span>
+         <span className='text-gray-500 text-[10px]'>{expense.account}</span>
        </div>
 
     </div>

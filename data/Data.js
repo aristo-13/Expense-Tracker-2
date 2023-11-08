@@ -8,7 +8,7 @@ export const Budgets = [
             {
                 text: 'Foods',
                 cost: 200,
-                account: 'credit',
+                account: 'Paypal',
                 id: 1,
             },
             {
@@ -34,7 +34,7 @@ export const Budgets = [
             {
                 text: 'Accommodation',
                 cost: 300,
-                account: 'credit',
+                account: 'Paypal',
                 id: 1,
             },
             {
@@ -46,7 +46,7 @@ export const Budgets = [
             {
                 text: 'Transport',
                 cost: 200,
-                account: 'credit',
+                account: 'Paypal',
                 id: 3,
             },
             {
@@ -66,13 +66,13 @@ export const Budgets = [
             {
                 text: 'Materials',
                 cost: 100,
-                account: 'credit',
+                account: 'Paypal',
                 id: 1,
             },
             {
                 text: 'Labor',
                 cost: 300,
-                account: 'credit',
+                account: 'Paypal',
                 id: 2,
             },
             {
@@ -98,13 +98,13 @@ export const Budgets = [
             {
                 text: 'Books',
                 cost: 500,
-                account: 'credit',
+                account: 'Paypal',
                 id: 2,
             },
             {
                 text: 'Stationery',
                 cost: 300,
-                account: 'credit',
+                account: 'Credit Card',
                 id: 3,
             },
         ],
@@ -118,7 +118,7 @@ export const Budgets = [
             {
                 text: 'Movies',
                 cost: 500,
-                account: 'credit',
+                account: 'Paypal',
                 id: 1,
             },
             {
@@ -144,7 +144,7 @@ export const Budgets = [
             {
                 text: 'Accommodation',
                 cost: 300,
-                account: 'credit',
+                account: 'Paypal',
                 id: 2,
             },
             {
@@ -156,7 +156,7 @@ export const Budgets = [
             {
                 text: 'Sightseeing',
                 cost: 100,
-                account: 'credit',
+                account: 'Credit Card',
                 id: 4,
             },
         ],
@@ -176,7 +176,7 @@ export const Budgets = [
             {
                 text: 'Electronics',
                 cost: 300,
-                account: 'credit',
+                account: 'Paypal',
                 id: 2,
             },
             {
@@ -208,7 +208,7 @@ export const Budgets = [
             {
                 text: 'Visit',
                 cost: 40,
-                account: 'credit',
+                account: 'Paypal',
                 id: 3,
             },
         ],
@@ -222,13 +222,13 @@ export const Budgets = [
             {
                 text: 'Art Supplies',
                 cost: 500,
-                account: 'credit',
+                account: 'Paypal',
                 id: 1,
             },
             {
                 text: 'Gaming Gear',
                 cost: 40,
-                account: 'credit',
+                account: 'Paypal',
                 id: 2,
             },
             {
@@ -254,13 +254,13 @@ export const Budgets = [
             {
                 text: 'Holiday Gifts',
                 cost: 60,
-                account: 'credit',
+                account: 'Credit Card',
                 id: 2,
             },
             {
                 text: 'Special Occasion Gifts',
                 cost: 200,
-                account: 'credit',
+                account: 'Paypal',
                 id: 3,
             },
         ],

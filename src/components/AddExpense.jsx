@@ -32,7 +32,7 @@ function AddExpense( {setNewExpense,budgetItem}) {
         <form className="flex flex-col gap-2" onSubmit={AddNewExpense}>
             <input type="text" className="border w-full p-2" placeholder="Enter Expense" value={newExpText} onChange={(e)=> setNewExpText(e.target.value)}/>
             <input type="number" className="border w-full p-2" placeholder="Enter Expense Cost" value={newExpCost} onChange={(e) => setNewExpCost(e.target.value)}/>
-            <select value='Credit' className="w-full border p-3" onChange={(e) => setAcc(e.target.value)}>
+            <select className="w-full border p-3" onChange={(e) => setAcc(e.target.value)}>
                 <option value="Credit">Credit</option>
                 <option value="Paypal">Paypal</option>
                 <option value="Credit Card">Credit Card</option>
