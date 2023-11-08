@@ -1,15 +1,15 @@
-import { useParams } from "react-router-dom"
-import { useContext } from "react"
-import { DataContext } from "./Context"
-import ExpenseEl from "./Expense"
+import { useParams } from "react-router-dom";
+import { useContext } from "react";
+import { DataContext } from "../components/Context";
+import { FaMinus } from "react-icons/fa";
+import ExpenseEl from "../components/Expense";
 
 function BudgetDetails() {
-  const { id } = useParams()
-  const { BudgetData } = useContext(DataContext)
-  
-  
+  const { id } = useParams();
+  const { BudgetData } = useContext(DataContext);
+
   if (!BudgetData || !BudgetData[id]) {
-    return <div>Loading...</div>; 
+    return <div>Loading...</div>;
   }
 
   const budgetItem = BudgetData[id];
@@ -25,7 +25,7 @@ function BudgetDetails() {
   }
 
   return (
-    <div className='flex flex-col w-full justify-center items-center p-3'>
+    <div className='flex flex-col w-full justify-center items-center p-3 relative'>
       <div className="flex flex-col justify-center items-center">
         <span className="text-lg sm:text-2xl font-bold text-blue-950">{budgetItem.category}</span>
         <span className="text-gray-500">{budgetItem.date}</span>
@@ -36,12 +36,15 @@ function BudgetDetails() {
         <span className="text-red-500 font-medium">Expenses: {calculateTotalExpenses()}</span>
       </div>
       <div className='w-full'>
+      {!(budgetItem.Expenses.length) > 0 && <p className="text-red-500 font-medium text-[1.4rem] text-center mt-10">No Transactions to show!</p>}
         {budgetItem.Expenses.map((expense) => (
-          <ExpenseEl expense={expense} key={expense.id} />
+          <ExpenseEl expense={expense} key={expense.id} budgetItem={budgetItem}/>
         ))}
       </div>
+
+      <FaMinus className="w-[50px] h-[40px] fixed bottom-10 right-[90px] bg-red-600 text-white cursor-pointer border rounded-full p-3 active:scale-[0.9]"/>
     </div>
   )
 }
 
-export default BudgetDetails
+export default BudgetDetails;

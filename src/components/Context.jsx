@@ -1,5 +1,5 @@
 import { createContext, useState,useEffect } from "react";
-import { Budgets } from "./Data";
+import { Budgets } from "../../data/Data";
 
 export const DataContext = createContext('')
 
@@ -7,6 +7,7 @@ export const DataContext = createContext('')
 function Context( {children} ) {
 const [showNav,setShowNav] = useState(false)
 const [BudgetData,setBudgetData] = useState([])
+const [ToggleAddBudget,setToggleAddBudget] = useState(false)
 
 
 useEffect(() => {
@@ -19,7 +20,9 @@ useEffect(() => {
         showNav,
         setShowNav,
         BudgetData,
-        setBudgetData
+        setBudgetData,
+        ToggleAddBudget,
+        setToggleAddBudget
       }
       }>
       {children}
