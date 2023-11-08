@@ -41,13 +41,13 @@ function AnalyticEl({ budget,handleDelete }) {
           <div className="w-[40px] h-[40px] rounded-full flex justify-center items-center text-white" style={{ backgroundColor: colors[budget.category] }}>{handleAvatar()}</div>
           <span className='text-gray-500'>{budget.date}</span>
         </div>
-        <Link to={`/budget/${budget.id}`} className='w-full sm:absolute sm:w-[70%] sm:left-[50%] sm:translate-x-[-50%]'>
-          <progress max='100' value={handleProgress()} style={{ width: "100%", height: '10px', borderRadius: '20px', overflow: "hidden" }}></progress>
+        <Link to={`/budget/${budget.id}`} className='w-full sm:absolute sm:w-[70%] sm:left-[50%] sm:translate-x-[-50%] h-[40px] sm:h-[50px] flex items-center justify-center'>
+          <progress max='100' value={handleProgress()} style={{ width: "100%", height: '20%', borderRadius: '20px', overflow: "hidden" }}></progress>
         </Link>
         <div className='w-full flex justify-between sm:flex-col sm:items-end gap-2'>
           <span>Budget: {budget.BudgetAmt.toLocaleString('en-US', { style: 'currency', currency: 'USD' })}</span>
           <div className='flex items-center gap-3 text-[1.2rem]'>
-            <button className='border p-2 rounded bg-green-600 text-white'><BsPen /></button>
+            <Link to={`/budget/${budget.id}/edit`} className='border p-2 rounded bg-green-600 text-white'><BsPen /></Link>
             <button className='border p-2 rounded bg-red-600 text-white' onClick={() => handleDelete(budget)}><BsTrash /></button>
           </div>
         </div>

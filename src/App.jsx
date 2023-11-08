@@ -4,6 +4,7 @@ import Dashboard from './Pages/Dashboard'
 import Analytics from './Pages/Analytics'
 import BudgetDetails from './Pages/BudgetDetails'
 import MissingErr from './Pages/MissingErr'
+import EditBudget from './Pages/EditBudget'
 
 function App() {
 const router = createBrowserRouter(
@@ -12,7 +13,8 @@ const router = createBrowserRouter(
         <Route path='/' element={<Dashboard />} />
         <Route path='/budget/:id' element={<BudgetDetails />} />
         <Route path='/analytics' element={<Analytics />}/>
-        
+        <Route path='/budget/:id/edit' element={<EditBudget />} />
+
         <Route path='*' element={<MissingErr />}/>
     </Route>
   )
