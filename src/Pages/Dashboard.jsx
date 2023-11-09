@@ -8,18 +8,10 @@ const {BudgetData,setBudgetData} = useContext(DataContext)
 const [Recents,setRecents] = useState([])
 
 
-const TotalBudget = () => {
-   let b = 0
-
-   BudgetData.forEach((budget) => {
-      b += budget.BudgetAmt
-   })
-
-   return b
-}
+const TotalBudget = BudgetData.reduce((acc,cur) => acc + cur.BudgetAmt, 0)
 
 
-const TotalExpenses = () => {
+/* const TotalExpenses = () => {
    let e = 0
 
    BudgetData.forEach((budget) =>{
@@ -29,7 +21,14 @@ const TotalExpenses = () => {
    })
 
    return e
-}
+} */
+
+
+const TotalExpenses = BudgetData.reduce((acc,cur) => {
+   const totalE = cur.Expenses.reduce((prev,curr) => prev + curr.cost,0)
+   return  acc + totalE
+}, 0)
+
 
 const handleRecents = () => {
    if(BudgetData.length > 5){
@@ -37,6 +36,8 @@ const handleRecents = () => {
     setRecents(recentRecords)
    }
  };
+
+
   
 useEffect(() => {
    handleRecents()
@@ -47,11 +48,11 @@ useEffect(() => {
     <div className='w-full'>
        <div className="w-full my-2 mx-auto grid sm:grid-cols-3 gap-1">
            <div className="flex flex-col h-[100px] border p-2 justify-between text-white bg-blue-950 rounded">
-              <span className='text-[1.7rem] sm:text-[2.5rem] font-medium'>{TotalBudget().toLocaleString('en-US', { style: 'currency',currency: 'USD',})}</span>
+              <span className='text-[1.7rem] sm:text-[2.5rem] font-medium'>{TotalBudget.toLocaleString('en-US', { style: 'currency',currency: 'USD',})}</span>
               <span>Total Budget</span>
            </div>
            <div className="flex flex-col h-[100px] border p-2 justify-between text-white bg-[#8f2738e2] rounded">
-              <span className='text-[1.7rem] sm:text-[2.5rem] font-medium'>{TotalExpenses().toLocaleString('en-US', { style: 'currency',currency: 'USD',})}</span>
+              <span className='text-[1.7rem] sm:text-[2.5rem] font-medium'>{TotalExpenses.toLocaleString('en-US', { style: 'currency',currency: 'USD',})}</span>
               <span>Total Expenses</span>
            </div>
            <div className="flex flex-col h-[100px] border p-2 justify-between text-white bg-[#7d858f] rounded ">
